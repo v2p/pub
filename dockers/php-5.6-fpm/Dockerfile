@@ -56,4 +56,19 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && apt-get autoremove -y \
     && rm -rf /var/lib/apt/lists/*
 
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        php5.6-fpm \
+    && apt-get clean -y \
+    && apt-get autoremove -y \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN sed -i '/daemonize /c \
+daemonize = no' /etc/php5/fpm/php-fpm.conf \
+    && sed -i '/^listen /c \
+listen = 0.0.0.0:9000' /etc/php5/fpm/pool.d/www.conf \
+    && sed -i 's/^listen.allowed_clients/;listen.allowed_clients/' /etc/php5/fpm/pool.d/www.conf
+
 WORKDIR /app
+
+EXPOSE 9000
+CMD ["php-fpm"]
