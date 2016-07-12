@@ -2,6 +2,9 @@ FROM node:5.12-slim
 
 MAINTAINER Vladimir Posvistelik <v.posvistelik@gmail.com>
 
+ARG APT_PROXY
+RUN if [ "$APT_PROXY" ]; then echo "Acquire::http { Proxy \"$APT_PROXY\"; };" > /etc/apt/apt.conf.d/01proxy; fi
+
 # install gosu:
 RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates wget \
     && wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/1.9/gosu-$(dpkg --print-architecture)" \

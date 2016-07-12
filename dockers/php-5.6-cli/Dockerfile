@@ -2,6 +2,9 @@ FROM ubuntu:16.04
 
 MAINTAINER Vladimir Posvistelik <v.posvistelik@gmail.com>
 
+ARG APT_PROXY
+RUN if [ "$APT_PROXY" ]; then echo "Acquire::http { Proxy \"$APT_PROXY\"; };" > /etc/apt/apt.conf.d/01proxy; fi
+
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN locale-gen en_US.UTF-8
