@@ -11,6 +11,7 @@ ENV LC_ALL en_US.UTF-8
 
 # add custom PHP repository and some system tools:
 RUN apt-get update && apt-get install -y --no-install-recommends \
+        ca-certificates \
         software-properties-common \
     && add-apt-repository ppa:ondrej/php \
     && apt-get remove -y software-properties-common \
@@ -38,7 +39,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # install gosu:
-RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates wget \
+RUN apt-get update && apt-get install -y --no-install-recommends wget \
     && wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/1.9/gosu-$(dpkg --print-architecture)" \
     && wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/1.9/gosu-$(dpkg --print-architecture).asc" \
     && export GNUPGHOME="$(mktemp -d)" \
@@ -47,7 +48,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates
     && rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc \
     && chmod +x /usr/local/bin/gosu \
     && gosu nobody true \
-    && apt-get remove -y ca-certificates wget \
+    && apt-get remove -y wget \
     && apt-get clean -y \
     && apt-get autoremove -y \
     && rm -rf /var/lib/apt/lists/*

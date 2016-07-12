@@ -11,6 +11,7 @@ ENV LC_ALL en_US.UTF-8
 
 # add custom PHP repository and some system tools:
 RUN apt-get update && apt-get install -y --no-install-recommends \
+        ca-certificates \
         software-properties-common \
     && add-apt-repository ppa:ondrej/php \
     && apt-get remove -y software-properties-common \
