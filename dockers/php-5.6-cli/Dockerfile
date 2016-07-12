@@ -33,7 +33,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates
     && rm -rf /var/lib/apt/lists/*
 
 # change entrypoint to use gosu-based script:
-COPY run-with-user.sh /usr/local/bin/run-with-user.sh
+ADD run-with-user.sh /usr/local/bin/run-with-user.sh
 RUN chmod +x /usr/local/bin/run-with-user.sh
 
 ENTRYPOINT ["/usr/local/bin/run-with-user.sh"]
