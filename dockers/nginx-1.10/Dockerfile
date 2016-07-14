@@ -1,4 +1,4 @@
-FROM nginx:stable
+FROM nginx:1.10
 
 MAINTAINER Vladimir Posvistelik <v.posvistelik@gmail.com>
 
