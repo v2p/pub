@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 ADD php-fpm.conf /etc/php/5.6/fpm/php-fpm.conf
 ADD www.conf /etc/php/5.6/fpm/pool.d/www.conf
+ADD xdebug.ini /etc/php/5.6/fpm/conf.d/20-xdebug.ini
 
 EXPOSE 9000
 
