@@ -18,13 +18,13 @@ ENV LC_ALL en_US.UTF-8
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
         gosu \
-        libmysqlclient-dev \
-        ruby \
+        ruby-sequel \
+        ruby-mysql \
+        ruby-sqlite3 \
     && apt-get clean -y \
     && apt-get autoremove -y \
     && rm -rf /var/lib/apt/lists/* \
-    && gosu nobody true \
-    && gem install sequel
+    && gosu nobody true
 
 ADD run-with-user.sh /usr/local/bin/run-with-user.sh
 RUN chmod +x /usr/local/bin/run-with-user.sh
