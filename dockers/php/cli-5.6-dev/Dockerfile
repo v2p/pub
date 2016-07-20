@@ -9,8 +9,8 @@ RUN if [ "$APT_PROXY" ]; then \
         rm -f /etc/apt/apt.conf.d/01proxy; \
     fi
 
-# install gosu:
 RUN apt-get update && apt-get install -y --no-install-recommends \
+        git \
         gosu \
     && apt-get clean -y \
     && apt-get autoremove -y \
