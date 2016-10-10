@@ -7,9 +7,9 @@
     "url": "https://github.com/v2p/pub.git"
   },
   "license": "MIT",
-  "main": "./src/main.js",
+  "main": "./dockers-parts/main.js",
   "scripts": {
-    "start": "node ./src/main.js"
+    "start": "node ./dockers-parts/main.js"
   },
   "engines": {
     "node": ">=6.7"
