@@ -1,0 +1,21 @@
+{
+  "name": "pub",
+  "version": "1.0.0",
+  "description": "Tool for simplifying creation process of dockerfiles",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/v2p/pub.git"
+  },
+  "license": "MIT",
+  "main": "./src/main.js",
+  "scripts": {
+    "start": "node ./src/main.js"
+  },
+  "engines": {
+    "node": ">=6.7"
+  },
+  "dependencies": {
+    "commander": "^2.9.0",
+    "file-system": "^2.2.1"
+  }
+}

@@ -1,0 +1,8 @@
+version: '2'
+services:
+  node-container:
+    image: vposvistelik/node:6.7-dev
+    volumes:
+      - .:/app
+    environment:
+      LOCAL_USER_ID: 1000
