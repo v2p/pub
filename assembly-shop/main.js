@@ -1,10 +1,13 @@
-let fs = require("file-system");
+import * as configs from './configs/index';
 
-fs.recurse("/app/dockers-parts/configs", ["**/builder.js"], (filepath, relative, filename) => {
-    if (filename) {
-        let builder = require(filename);
-        let dockerfile = builder.create();
+let s = typeof configs;
+console.log(s);
 
-        console.log(`output: ${dockerfile}`);
-    }
-});
+    // if (filename) {
+    //     console.log(filename);
+    //     let module = require(filepath);
+    //     module.configCommands.forEach((arg) => {
+    //         console.log(`output: ${arg}`);
+    //     });
+    // }
+// });

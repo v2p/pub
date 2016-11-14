@@ -7,22 +7,14 @@
     "url": "https://github.com/v2p/pub.git"
   },
   "license": "MIT",
-  "main": "./dockers-parts/main.js",
+  "main": "./assembly-shop/main.js",
   "scripts": {
-    "start": "node ./dockers-parts/main.js"
+    "start": "node ./assembly-shop/main.js"
   },
   "engines": {
     "node": ">=6.7"
   },
   "dependencies": {
-    "commander": "^2.9.0",
-    "eslint": "^3.10.0",
-    "file-system": "^2.2.1"
-  },
-  "devDependencies": {
-    "eslint": "^3.10.0",
-    "eslint-config-standard": "^6.2.1",
-    "eslint-plugin-promise": "^3.3.2",
-    "eslint-plugin-standard": "^2.0.1"
+    "eslint": "^3.10.1"
   }
 }

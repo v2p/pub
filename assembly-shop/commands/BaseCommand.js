@@ -1,5 +1,0 @@
-class BaseCommand {
-    run() {
-        return '';
-    }
-}
