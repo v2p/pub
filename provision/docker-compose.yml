@@ -3,6 +3,7 @@ services:
   node-container:
     image: vposvistelik/node:6.7-dev
     volumes:
-      - .:/app
+      - ./../:/app
+      - ./node-container-files/npm-bin-exec.sh:/usr/bin/npm-bin-exec:ro
     environment:
       LOCAL_USER_ID: 1000
