@@ -1,7 +1,7 @@
-import {default as getCommands} from '../../../commands-presets/ubuntu1604';
+import createCommands from '../../../commands-presets/ubuntu1604';
 import * as commands from '../../../commands/index';
 
-let configCommands = getCommands();
+let configCommands = createCommands();
 
 configCommands.push([
     new commands.From('ubuntu:123'),
