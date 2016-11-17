@@ -1,4 +1,4 @@
-export default class FromCommand {
+export class FromCommand {
     constructor(from) {
         this.from = from;
     }

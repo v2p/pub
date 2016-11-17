@@ -1,4 +1,4 @@
-export default class MaintainerCommand {
+export class MaintainerCommand {
     constructor(maintainer) {
         this.maintainer = maintainer;
     }

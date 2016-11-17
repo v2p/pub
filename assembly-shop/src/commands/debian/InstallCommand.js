@@ -1,4 +1,4 @@
-export default class InstallCommand {
+export class InstallCommand {
     /**
      * @param {Array} packages
      */
