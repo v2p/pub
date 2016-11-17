@@ -1,6 +1,6 @@
 import {Command} from "./../Command";
 
-export class InstallCommand extends Command {
+export class AptCacherCommand extends Command {
     /**
      * @param {Array} packages
      * @param comment

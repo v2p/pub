@@ -4,6 +4,7 @@ fs.recurse(__dirname + "/configs", ["**/config.js"], (filepath, relative, filena
     if (filename) {
         let commands = require(filepath).configCommands;
         commands.forEach((command) => {
+            /** @var {Command} command */
             console.log(`${command.run()}`);
         });
     }

@@ -1,9 +1,12 @@
-export class MaintainerCommand {
-    constructor(maintainer) {
+import {Command} from "./Command";
+
+export class MaintainerCommand extends Command {
+    constructor(maintainer, comment = null) {
+        super(comment);
         this.maintainer = maintainer;
     }
 
-    run() {
+    buildInstruction() {
         return `MAINTAINER ${this.maintainer}`;
     }
 }
