@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-docker-compose run --rm node-container npm $@
+./docker-compose.sh node-container npm $@
