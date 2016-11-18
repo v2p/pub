@@ -5,4 +5,4 @@ services:
     volumes:
       - ./../:/app
     environment:
-      LOCAL_USER_ID: "${UID}"
+      LOCAL_USER_ID: "${DOCKER_COMPOSE_UID}"
