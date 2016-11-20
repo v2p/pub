@@ -29,9 +29,10 @@ export class DockerfileBuilder {
     }
 
     /**
-     * @returns {Command[]|Map}
+     * @returns {Command[]}
      */
-    getCommands() {
-        return this.uniqueCommands;
+    *getCommands() {
+        yield this.uniqueCommands.get(fromSymbol);
+        yield this.uniqueCommands.get(maintainerSymbol);
     }
 }
