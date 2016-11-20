@@ -7,10 +7,9 @@
     "url": "https://github.com/v2p/pub.git"
   },
   "license": "MIT",
-  "main": "./main.js",
+  "main": "./build/main.js",
   "scripts": {
-    "watch": "$(npm bin)/babel ./src --watch --out-dir ./build",
-    "prestart": "$(npm bin)/babel ./src --out-dir ./build",
+    "prestart": "rm -rf ./build && $(npm bin)/babel ./src --out-dir ./build",
     "start": "node ./build/main.js"
   },
   "engines": {

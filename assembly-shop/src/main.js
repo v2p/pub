@@ -1,10 +1,9 @@
 let fs = require("file-system");
 
-fs.recurse(__dirname + "/configs", ["**/config.js"], (filepath, relative, filename) => {
+fs.recurse(__dirname + "/dockers", ["**/dockerfileBuilder.js"], (filepath, relative, filename) => {
     if (filename) {
-        let commands = require(filepath).configCommands;
-        commands.forEach((command) => {
-            /** @var {Command} command */
+        let builder = require(filepath).default;
+        builder.getCommands().forEach((command) => {
             console.log(`${command.run()}`);
         });
     }
