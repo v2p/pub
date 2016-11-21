@@ -3,10 +3,10 @@ import {Command} from "./Command";
 export class FromCommand extends Command {
     constructor(from, comment) {
         super(comment);
-        this.from = from;
+        this.argument = from;
     }
 
     buildInstruction() {
-        return `FROM ${this.from}`;
+        return `FROM ${this.argument}`;
     }
 }

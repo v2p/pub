@@ -3,10 +3,10 @@ import {Command} from "./Command";
 export class MaintainerCommand extends Command {
     constructor(maintainer, comment) {
         super(comment);
-        this.maintainer = maintainer;
+        this.argument = maintainer;
     }
 
     buildInstruction() {
-        return `MAINTAINER ${this.maintainer}`;
+        return `MAINTAINER ${this.argument}`;
     }
 }
