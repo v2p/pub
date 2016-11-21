@@ -1,10 +1,11 @@
 export default class RunCommandBuilder {
     /**
+     * @param {string} initialValue
      * @param {DockerfileBuilder} dockerfileBuilder
      */
-    constructor(dockerfileBuilder) {
+    constructor(dockerfileBuilder, initialValue) {
         this.dockerfileBuilder = dockerfileBuilder;
-        this.actions = [];
+        this.actions = [initialValue];
     }
 
     /**

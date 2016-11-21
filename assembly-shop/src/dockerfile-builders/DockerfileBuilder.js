@@ -80,10 +80,11 @@ export class DockerfileBuilder {
     }
 
     /**
+     * @param {string} value
      * @returns {RunCommandBuilder}
      */
-    runBuilder() {
-        return new RunCommandBuilder(this);
+    runBuilder(value) {
+        return new RunCommandBuilder(this, value);
     }
 
     /**
