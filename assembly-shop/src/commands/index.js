@@ -3,3 +3,4 @@ export {InstallCommand as DebBasedInstall} from './deb-based/InstallCommand';
 
 export {FromCommand as From} from './FromCommand';
 export {MaintainerCommand as Maintainer} from './MaintainerCommand';
+export {RunCommand as Run} from './RunCommand';

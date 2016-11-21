@@ -6,4 +6,12 @@ export default getDockerfileBuilder()
         [],
         [],
         'add custom PHP repository and some system tools'
-    );
+    )
+    .run('something')
+    .runBuilder()
+        .andRun('apt-get update')
+        .andRun('apt-get install -y --no-install-recommends apt-cacher-ng')
+        .andRun('apt-get clean -y')
+        .andRun('apt-get autoremove -y')
+        .andRun('rm -rf /var/lib/apt/lists/*')
+    .runBuilderEnd('some funny comment');

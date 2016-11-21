@@ -1,4 +1,5 @@
 import * as commands from './../commands/index';
+import RunCommandBuilder from './../command-builders/RunCommandBuilder'
 
 let fromSymbol = Symbol('from');
 let maintainerSymbol = Symbol('maintainer');
@@ -67,6 +68,22 @@ export class DockerfileBuilder {
      */
     maintainer(value, comment = null) {
         return this.setCommand(maintainerSymbol, new commands.Maintainer(value, comment));
+    }
+
+    /**
+     * @param {string} value
+     * @param {string|null} comment
+     * @returns {DockerfileBuilder}
+     */
+    run(value, comment = null) {
+        return this.addCommand(new commands.Run(value, comment));
+    }
+
+    /**
+     * @returns {RunCommandBuilder}
+     */
+    runBuilder() {
+        return new RunCommandBuilder(this);
     }
 
     /**
