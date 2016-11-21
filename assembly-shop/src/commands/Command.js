@@ -1,5 +1,5 @@
 export class Command {
-    constructor(comment = null) {
+    constructor(comment) {
         this.comment = comment;
     }
 
@@ -9,6 +9,6 @@ export class Command {
 
     run() {
         let instruction = this.buildInstruction();
-        return this.comment !== null ? `# ${this.comment}:\n${instruction}` : instruction;
+        return !!this.comment ? `# ${this.comment}:\n${instruction}` : instruction;
     }
 }

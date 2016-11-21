@@ -1,7 +1,7 @@
 import {Command} from "./Command";
 
 export class MaintainerCommand extends Command {
-    constructor(maintainer, comment = null) {
+    constructor(maintainer, comment) {
         super(comment);
         this.maintainer = maintainer;
     }
