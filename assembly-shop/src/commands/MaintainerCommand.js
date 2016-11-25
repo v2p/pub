@@ -1,12 +1,12 @@
 import {Command} from "./Command";
 
 export class MaintainerCommand extends Command {
-    constructor(maintainer, comment) {
+    constructor(instruction, comment) {
         super(comment);
-        this.argument = maintainer;
+        this.instruction = instruction;
     }
 
     buildInstruction() {
-        return `MAINTAINER ${this.argument}`;
+        return `MAINTAINER ${this.instruction}`;
     }
 }

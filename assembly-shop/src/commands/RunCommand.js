@@ -1,12 +1,12 @@
 import {Command} from "./Command";
 
 export class RunCommand extends Command {
-    constructor(run, comment) {
+    constructor(instruction, comment) {
         super(comment);
-        this.argument = run;
+        this.instruction = instruction;
     }
 
     buildInstruction() {
-        return `RUN ${this.argument}`;
+        return `RUN ${this.instruction}`;
     }
 }
