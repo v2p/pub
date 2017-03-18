@@ -52,31 +52,32 @@ export class DockerfileBuilder {
         return this;
     }
 
-    /**
-     * @param {string} value
-     * @param {string|null} comment
-     * @returns {DockerfileBuilder}
-     */
-    from(value, comment = null) {
-        return this.setCommand(fromSymbol, new commands.From(value, comment));
+    comment(value) {
+        return this.addCommand(new commands.Comment(value));
     }
 
     /**
      * @param {string} value
-     * @param {string|null} comment
      * @returns {DockerfileBuilder}
      */
-    maintainer(value, comment = null) {
-        return this.setCommand(maintainerSymbol, new commands.Maintainer(value, comment));
+    from(value) {
+        return this.setCommand(fromSymbol, new commands.From(value));
     }
 
     /**
      * @param {string} value
-     * @param {string|null} comment
      * @returns {DockerfileBuilder}
      */
-    run(value, comment = null) {
-        return this.addCommand(new commands.Run(value, comment));
+    maintainer(value) {
+        return this.setCommand(maintainerSymbol, new commands.Maintainer(value));
+    }
+
+    /**
+     * @param {string} value
+     * @returns {DockerfileBuilder}
+     */
+    run(value) {
+        return this.addCommand(new commands.Run(value));
     }
 
     /**

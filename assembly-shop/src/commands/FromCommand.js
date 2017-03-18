@@ -1,8 +1,8 @@
 import {Command} from "./Command";
 
 export class FromCommand extends Command {
-    constructor(instruction, comment) {
-        super(comment);
+    constructor(instruction) {
+        super();
         this.instruction = instruction;
     }
 

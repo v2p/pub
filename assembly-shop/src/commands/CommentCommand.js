@@ -1,12 +1,12 @@
 import {Command} from "./Command";
 
-export class ArgCommand extends Command {
+export class CommentCommand extends Command {
     constructor(instruction) {
         super();
         this.instruction = instruction;
     }
 
     buildInstruction() {
-        return `ARG ${this.instruction}`;
+        return `# ${this.instruction}`;
     }
 }

@@ -4,11 +4,9 @@ export class InstallCommand extends Command {
     /**
      * @param {Array} packagesToInstall
      * @param {Array} packagesToRemove
-     * @param comment
      */
-    constructor(packagesToInstall, packagesToRemove, comment) {
-        super(comment);
-
+    constructor(packagesToInstall, packagesToRemove) {
+        super();
         this.packagesToInstall = packagesToInstall;
         this.packagesToRemove = packagesToRemove;
     }
