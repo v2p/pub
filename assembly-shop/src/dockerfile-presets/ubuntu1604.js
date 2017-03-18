@@ -5,6 +5,5 @@ export function getDockerfileBuilder() {
 
     return builder
         .from('ubuntu:16.04')
-        .maintainer('Vladimir Posvistelik <v.posvistelik@gmail.com>')
-        .useAptCacher(true);
+        .maintainer('Vladimir Posvistelik <v.posvistelik@gmail.com>');
 }

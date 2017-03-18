@@ -1,6 +1,7 @@
 import {getDockerfileBuilder} from '../../../dockerfile-presets/ubuntu1604';
 
 export default getDockerfileBuilder()
+    .useAptCacher(true)
     .comment('add custom PHP repository and some system tools')
     .install(
         ['ca-certificates', 'software-properties-common'],
