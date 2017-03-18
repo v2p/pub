@@ -1,5 +1,5 @@
 import {DockerfileBuilder as BaseBuilder} from '../DockerfileBuilder'
-import * as commands from './../../commands/index';
+import * as commands from './../../commands/deb-based/index';
 
 let aptCacherSymbol = Symbol('aptCacher');
 
@@ -10,7 +10,7 @@ export class DockerfileBuilder extends BaseBuilder {
      */
     useAptCacher(shouldUse) {
         return shouldUse
-            ? this.setCommand(aptCacherSymbol, new commands.DebBasedAptCacher())
+            ? this.setCommand(aptCacherSymbol, new commands.AptCacher())
             : this.unsetCommand(aptCacherSymbol);
     }
 
@@ -20,7 +20,7 @@ export class DockerfileBuilder extends BaseBuilder {
      * @returns {DockerfileBuilder}
      */
     install(packagesToInstall, packagesToRemove = []) {
-        return this.addCommand(new commands.DebBasedInstall(
+        return this.addCommand(new commands.Install(
             packagesToInstall,
             packagesToRemove
         ));
