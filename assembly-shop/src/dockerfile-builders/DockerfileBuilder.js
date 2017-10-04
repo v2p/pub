@@ -30,7 +30,7 @@ export class DockerfileBuilder {
     setCommand(commandSymbol, command) {
         this.commandsMap.set(commandSymbol, command);
 
-        if (this.commandsOrder.indexOf(commandSymbol) == -1) {
+        if (this.commandsOrder.indexOf(commandSymbol) === -1) {
             this.commandsOrder.push(commandSymbol);
         }
 
@@ -45,7 +45,7 @@ export class DockerfileBuilder {
         this.commandsMap.delete(commandSymbol);
 
         let commandIndex = this.commandsOrder.indexOf(commandSymbol);
-        if (commandIndex != -1) {
+        if (commandIndex !== -1) {
             this.commandsOrder.splice(commandIndex, 1);
         }
 
